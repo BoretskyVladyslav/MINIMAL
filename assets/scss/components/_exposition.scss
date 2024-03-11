@@ -1,0 +1,149 @@
+@import "../utils/const";
+@import "../utils/mixin";
+.exposition {
+    margin-bottom: 100px;
+    &__img-box{
+        background-image: url(../images/exposition/bg-img.png);
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: cover;
+        width: 536px;
+        height: 540px;
+    }
+    &__text-wrapper{
+        @include displayFlex ($alignItems: flex-start, $justifyContent: center, $gap: 30px, $flexDirection: column);
+        width: 622px;
+    }
+    &__content {
+        @include displayFlex ($alignItems: center, $justifyContent: flex-start, $gap: 24px, $flexDirection: row);
+    }
+    &__information {
+        @include displayFlex ($alignItems: center, $justifyContent: center, $gap: 30px, $flexDirection: column);
+        background-color: #F7FAFF;
+        padding: 36px 69px 37px;
+        text-align: left;
+    }
+    &__subtitle {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        @include displayFlex ($alignItems: center, $justifyContent: center, $gap: 20px, $flexDirection: row);
+        &::before{
+            content: '';
+            width: 30px;
+            height: 1px;
+            background-color: $blur-bluy;
+        }
+    }
+    &__title {
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 45px;
+        text-transform: uppercase;
+    }
+    &__text{
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 27px;
+    }
+    .facts-list {
+        @include displayFlex ($alignItems: center, $justifyContent: center, $gap: 56px, $flexDirection: row);
+        text-align: center;
+        &__item{
+            &::before {
+                content: "5+";
+                font-size: 50px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 75px;
+                text-transform: uppercase;
+            }
+            &:nth-child(2)::before{
+                content: "100%";
+            }
+            &:nth-child(3)::before{
+                content: "500+";
+            }
+        }
+        &__text {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 27px;
+            width: 170px;
+        }
+    }
+}
+@media (max-width: 1200px){
+    .exposition {
+        &__img-box{
+            height: 486px;
+            width: 282px;
+        }
+        &__text-wrapper{
+            width: 560px;
+        }
+        &__information{
+            padding-left: 64px;
+            padding-right: 64px;
+        }
+        .facts-list{
+            gap: 25px;
+        }
+    }
+}
+@media (max-width:1024px){
+    .exposition {
+        &__content{
+            
+            flex-direction: column;
+        }
+        &__img-box{
+            background-image: url(../images/exposition/bd-img-adaptive.png);
+            width: 704px;
+            height: 540px;
+        }
+        &__text-wrapper{
+            width: 576px;
+        }
+        .facts-list{
+            gap: 33px;
+        }
+    }
+}
+@media (max-width: 704px){
+    .exposition {
+        &__content {
+            flex-direction: column;
+        }
+        &__img-box {
+            background-image: url(../images/exposition/bd-img-adaptive.png);
+            width: 100%;
+            height: auto;
+        }
+        &__text-wrapper {
+            width: 100%;
+            text-align: center;
+        }
+        .exposition__information {
+            padding: 24px;
+        }
+        .facts-list {
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+            .facts-list__item {
+                &::before {
+                    content: '';
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

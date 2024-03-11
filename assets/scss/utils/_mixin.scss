@@ -1,0 +1,13 @@
+@mixin container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  @mixin displayFlex ($alignItems: center, $justifyContent: center, $gap: 0, $flexDirection: row){
+    display: flex;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+    gap: $gap;
+    flex-direction: $flexDirection;
+}

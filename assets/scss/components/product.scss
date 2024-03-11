@@ -1,0 +1,110 @@
+@import "../utils/const";
+@import "../utils/mixin";
+.products {
+    margin-bottom: 100px;
+    &__content {
+        @include displayFlex ($alignItems: center, $justifyContent: center, $gap: 30px, $flexDirection: column);
+    }
+    &__title {
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 45px;
+        text-transform: uppercase;
+    }
+    .products-gallery {
+        @include displayFlex ($alignItems: center, $justifyContent: center, $gap: 24px, $flexDirection: row);
+        &__card {
+            @include displayFlex ($alignItems: flex-start, $justifyContent: center, $gap: 15px, $flexDirection: column);
+        }
+        &__img {
+            width: 312px;
+            height: 300px;
+        }
+        &__img-name {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 27px;
+        }
+    }
+}
+@media (max-width:1320px){
+    .products{
+        .products-gallery{
+            flex-wrap: wrap;
+            &__img{
+                width: 375px;
+                height: 363px;
+            }
+        }
+    }
+}
+@media (max-width:1200px){
+    .products{
+        .products-gallery{
+            &__img {
+                width: 345px;
+                height: 343px;
+            }
+        }
+    }
+}
+@media (max-width:1112px){
+    .products{
+        .products-gallery{
+            &__img {
+                width: 325px;
+                height: 323px;
+            }
+        }
+    }
+}
+@media (max-width:1024px){
+    .products{
+        .products-gallery{
+            gap: 16px;
+            &__img {
+                width: 344px;
+                height: 300px;
+            }
+            &__card{
+                &:nth-child(3),&:nth-child(4){
+                    display: none;
+                }
+            }
+        }
+    }
+}
+@media (max-width:704px){
+    .products{
+        .products-gallery{
+            &__img{
+                width: 275px;
+                height: 258px;
+            }
+        }
+    }
+}
+@media (max-width:568px){
+    .products{
+        .products-gallery{
+            &__img{
+                width: 343px;
+                height: 300px;
+            }
+            &__card:nth-child(2){
+                display: none;
+            }
+        }
+    }
+}
+@media (max-width:568px){
+    .products{
+        .products-gallery{
+            &__img{
+                width: 322px;
+            }
+        }
+    }
+}

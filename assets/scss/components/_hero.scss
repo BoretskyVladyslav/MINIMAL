@@ -1,0 +1,95 @@
+@import "../utils/const";
+@import "../utils/mixin";
+.hero {
+    margin-bottom: 100px;
+    &__content {
+        @include displayFlex ($alignItems: center, $justifyContent: space-between, $gap: 20px, $flexDirection: row);
+        
+    }
+    &__decoration {
+        background-image: url(../images/section-hero/group-bg-2.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    &__title {
+        font-family: "Playfair Display";
+        font-size: 50px;
+        font-weight: 400;
+        line-height: 75px;
+        text-transform: uppercase;
+        padding-bottom: 380px;
+    }
+    &__information {
+        @include displayFlex ($alignItems: flex-start, $justifyContent: center, $gap: 30px, $flexDirection: column);
+        background-image: url(../images/section-hero/pinned-image.png);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+    }
+    &__text {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        padding-top: 390px;
+        width: 306px;
+    }
+    &__btn {
+        color: $btn-color;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        padding: 17px 65px;
+        background-color: $blur-bluy;
+    }
+}
+@media (max-width:1024px) {
+    .hero{
+        &__information {
+            background-image: none;
+        }
+        &__text{
+            padding: 0;
+        }
+        &__decoration{
+            background-image: url(../images/section-hero/group-bg-adaptive.png);
+        }
+        &__title{
+            padding-bottom: 378px;
+            font-size: 37px;
+            line-height: 42px;
+        }
+        &__content{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}
+@media (max-width:568px) {
+    .hero{
+        background-image: url(../images/section-hero/bg-mobile-adaptive.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding: 140px 0 313px;
+        margin-bottom: 64px;
+        &__information {
+            background-image: none;
+            width: 100%;
+        }
+        &__text{
+            padding: 0;
+        }
+        &__decoration{
+            background-image: none;
+        }
+        &__title{
+            font-size: 28px;
+            padding: 0;
+        }
+        &__content{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}

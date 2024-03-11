@@ -1,0 +1,124 @@
+/*-------------------------------*/
+/*  :::::::::::::::::::::::      */
+.clients {
+  margin: 0;
+  padding: 60px 0;
+  background: #F7FAFF;
+}
+.clients__content {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.clients__card-group {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.clients-card {
+  padding: 32px;
+  border-radius: 8px;
+  background: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+.clients-card__user {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.clients-card__user-image {
+  width: 56px;
+  height: 56px;
+}
+.clients-card__user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+}
+.clients-card__name {
+  color: #0A224A;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 45px;
+  text-transform: uppercase;
+}
+.clients-card__time {
+  color: #0A224A;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  opacity: 0.8;
+}
+.clients-card__message {
+  width: 360px;
+  color: #0A224A;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+@media (max-width: 1024px) {
+  .clients {
+    padding: 36px 0;
+  }
+  .clients__card-group {
+    gap: 16px;
+  }
+  .clients-card {
+    padding: 24px;
+    gap: 14px;
+  }
+  .clients-card:nth-child(3) {
+    display: none;
+  }
+  .clients-card__message {
+    width: 296px;
+  }
+}
+@media (max-width: 768px) {
+  .clients {
+    padding: 36px 0;
+  }
+  .clients-card {
+    gap: 24px;
+  }
+  .clients-card:nth-child(2) {
+    display: none;
+  }
+  .clients-card__user-image {
+    width: 48px;
+    height: 48px;
+  }
+  .clients-card__user-info {
+    gap: 2px;
+  }
+  .clients-card__name {
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .clients-card__time {
+    font-size: 14px;
+  }
+  .clients-card__message {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

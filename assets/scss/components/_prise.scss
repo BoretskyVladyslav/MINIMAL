@@ -1,0 +1,54 @@
+@import "../utils/const";
+@import "../utils/mixin";
+.prise {
+    margin-bottom: 100px;
+    .prise-list {
+        border: 0.5px solid #0A224A;
+        border-right: none;
+        border-left: none;
+        overflow: hidden;
+        &__item {
+            @include displayFlex ($alignItems: center, $justifyContent: space-between, $gap: 0, $flexDirection: row);
+            font-style: normal;
+            border: 0.5px solid #0A224A;
+            border-right: none;
+            border-left: none;
+            padding: 30px 0;
+            position: relative;
+            transition: all 200ms;
+            &::before{
+                content: ' ';
+                position: absolute;
+                width: 50px;
+                height: 1px;
+                background-color: #0A224A;
+                transition: all 200ms;
+                left: -100%;
+            }
+            &:hover{
+                &::before{
+                    left: 0%;
+                }
+                padding-left: 80px;
+            }
+        }
+        &__item-name {
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 45px;
+            text-transform: uppercase;
+            @include displayFlex ($alignItems: center, $justifyContent: center, $gap: 30px, $flexDirection: row);
+        }
+        &__value {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 27px;
+        }
+    }
+}
+@media (max-width: 568px) {
+    .prise{
+        margin-bottom: 64px;
+        
+    }
+}
